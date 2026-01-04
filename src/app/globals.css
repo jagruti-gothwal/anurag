@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-playfair);
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:root {
+  --background: 340 100% 98%;
+  /* Very light pink */
+  --foreground: 340 40% 20%;
+  /* Dark pink-brown for text */
+  --card: 0 0% 100%;
+  --card-foreground: 340 40% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 340 40% 20%;
+  --primary: 340 85% 65%;
+  /* Soft hot pink */
+  --primary-foreground: 340 100% 98%;
+  --secondary: 340 60% 92%;
+  /* Pale pink */
+  --secondary-foreground: 340 60% 40%;
+  --muted: 340 30% 95%;
+  --muted-foreground: 340 20% 50%;
+  --accent: 340 60% 92%;
+  --accent-foreground: 340 60% 40%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 340 30% 90%;
+  --input: 340 30% 90%;
+  --ring: 340 85% 65%;
+  --radius: 1.5rem;
+  /* Extra rounded */
+}
+
+.dark {
+  --background: 340 40% 10%;
+  --foreground: 340 30% 95%;
+  --card: 340 40% 12%;
+  --card-foreground: 340 30% 95%;
+  --popover: 340 40% 12%;
+  --popover-foreground: 340 30% 95%;
+  --primary: 340 85% 65%;
+  --primary-foreground: 340 100% 98%;
+  --secondary: 340 40% 20%;
+  --secondary-foreground: 340 30% 95%;
+  --muted: 340 40% 20%;
+  --muted-foreground: 340 20% 70%;
+  --accent: 340 40% 20%;
+  --accent-foreground: 340 30% 95%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 340 40% 20%;
+  --input: 340 40% 20%;
+  --ring: 340 85% 65%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 dark:bg-black/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500;
+}
