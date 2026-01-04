@@ -9,7 +9,7 @@ const milestones = [
         date: "The Beginning",
         title: "First Met You",
         description: "The day my life changed forever. I knew there was something special about you.",
-        image: "/IMG_0048.JPG",
+        image: "IMG_4563.JPEG",
     },
     {
         date: "First Date",
